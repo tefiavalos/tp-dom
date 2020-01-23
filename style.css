@@ -57,16 +57,17 @@ img{
 .modal{
     border: 1px solid black;
     height: 500px;
-    width: 500px;
-    position: absolute;
+    width: 300px;
+    position: fixed;
     right: 100px;
     top: 100px;
     font-size: 10px;
+    background-color: #fff;
 }
 
 .imgModal{
-width: 50%;
-height: 50%;
+width: 100%;
+height: auto;
 }
 
 
