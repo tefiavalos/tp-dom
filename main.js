@@ -52,6 +52,7 @@ const gatos = [
     <h2>${nombre}</h2>
     <p>${descripcion}</p>
     <button class="mostrarModal">Ver más</button>
+    </div>
     </div>`
 
   }
