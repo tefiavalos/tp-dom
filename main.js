@@ -66,29 +66,25 @@ const gatos = [
     let descripcionLarga = gato.longDesc
     let img = gato.img 
     let divModal = document.getElementById("modalContainer")
+
     divModal.innerHTML = `
     <div class="modal">
     <div class="imgModal"><img src="${img}"></div>
     <div class="descripcionModal">
     <h2>${nombre}</h2>
     <p>${descripcionLarga}</p>
-    <button class="cerrarModal">Cerrar</button>
+    
     </div>
     </div>
     `
         }
-
-    
-    }
-    
-    let botonesCerrar = document.getElementsByClassName("cerrarModal")
-    let modales = document.getElementsByClassName("modal")
-    for (let i = 0; i < botonesCerrar.length; i++) {
-        botonesCerrar[i].onclick = () => {
-            modales.classList.add("nomostrar") 
-    
-        }
     }
     
     
+    let botonCerrar = document.getElementById("cerrarModal")
+    let modales = document.querySelector(".modal")
     
+    botonCerrar.onclick = () => {
+      console.log(modales)
+       modales.classList.add("nomostrar")
+    }
