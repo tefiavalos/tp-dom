@@ -107,5 +107,22 @@ const gatos = [
 
    // formAnimales.onsubmit = e => {
     //  e.preventDefault();
+    formulario.onsubmit = e => {
+     e.preventDefault();
+
+     const checkboxes = document.querySelectorAll("input[type='checkbox']");
+     let nombre = document.querySelectorAll("input[type='text']");
+     let numero = document.querySelectorAll("input[type='number']");
+
+     console.log(nombre)
+     /*for (let i = 0; i < checkboxes.length; i++) {
+       let opcionesElegidas = [];
+      if (checkboxes[i].checked) {
+        opcionesElegidas.push(checkboxes[i].value)
+        opcionesElegidas.push(nombre.value)
+        opcionesElegidas.push(numero.value)
+     };
+     console.log(opcionesElegidas)
+    }*/
 
    // }
