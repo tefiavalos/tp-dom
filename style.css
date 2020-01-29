@@ -159,7 +159,9 @@ img {
 }
 
 .main-description {
-    text-align: center;
+  width: 60%;
+  padding-left: 100px;
+  padding-right: 150px;
 }
 
 .img-main {
