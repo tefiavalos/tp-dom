@@ -8,43 +8,66 @@
     <title>AdoptAdas</title>
     <link rel='stylesheet' href='style.css'>
     <script src="https://kit.fontawesome.com/dfe0c48ac4.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Caveat:400,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <nav>
-        <h4>#AdoptAdas</h4>
-        <i class="fas fa-bars"></i>
+        <div id="titulo">
+            <h3> <i class="fas fa-paw"></i>AdoptAdas</h3>
+        </div>
+        <div id="menu"><i class="fas fa-bars"></i>
+        </div>
     </nav>
+
     <div class="main">
-        <div class="main-description"><h4>Adoptá un gatito</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime blanditiis nostrum quis. Dolorem placeat
-            dolores aspernatur molestiae enim deleniti suscipit praesentium rerum, laudantium, necessitatibus voluptate,
-            doloribus magnam minima voluptates! Magni.</p></div>
-        <div class="imagen-main"><img src="img/Gato.jpg" class="img-main"></div>
+        <div class="main-description">
+            <h4>Adoptá un gatito</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime blanditiis nostrum quis. Dolorem placeat
+                dolores aspernatur molestiae enim deleniti suscipit praesentium rerum, laudantium, necessitatibus
+                voluptate,
+                doloribus magnam minima voluptates! Magni.</p>
+        </div>
+        <div class="imagen-main"><img src="img/kitten.png" class="img-main"></div>
     </div>
 
-    <form action="">
-        <input type="checkbox" name="colores" value="negro">negro
-        <input type="checkbox" name="colores" value="blanco">blanco
-        <input type="checkbox" name="colores" value="tricolor">tricolor
-        <input type="checkbox" name="colores" value="gris">gris
+    <section id="formularioddeadopcion">
+        <h2>Formulario de Adopcion></h2>
+        <form action="" method="get">
+            <label> Nombre:
+                <input type="text" name="nombre" placeholder="Ingresa tu nombre">
+            </label>
+            <label> Telefono:
+                <input type="text" name="telefono" placeholder="Ingresa tu telefono">
+            </label>
+            <label class="inline"> Color de pelaje:
+                <input type="checkbox" name="colores" value="negro">negro
+                <input type="checkbox" name="colores" value="blanco">blanco
+                <input type="checkbox" name="colores" value="tricolor">tricolor
+                <input type="checkbox" name="colores" value="gris">gris
+            </label>
+            <label class="inline"> Sexo:
+                <input type="radio" name="sexo" value="masculino">masculino
+                <input type="radio" name="sexo" value="femenino">femenino
+            </label>
+            <label>
+                <input id"sbmit" type="submit" value="filtrar" name="enviar">
+            </label>
+        </form>
+    </section>
+    <section>
+        <div id="modalContainer" class="nomostrar">
+            <div id="contenidoDelModal"></div>
+            <button id="cerrarModal">Cerrar</button>
+        </div>
+    </section>
 
-        <input type="checkbox" name="sexo" value="masculino">masculino
-        <input type="checkbox" name="sexo" value="femenino">femenino
 
-        <input type="text" name="nombre">Nombre
-        <input type="number" name="telefono" value="telephone">Telefono
+    <footer>
+        <div class="footer">
 
-        <input type="submit" value="filtrar">
-    </form>
-
-    <section></section>
-    <div id="modalContainer" class="nomostrar">
-        <div id="contenidoDelModal"></div>
-        <button id="cerrarModal">Cerrar</button>
-    </div>
-
-
+        </div>
+    </footer>
     <script src="main.js"></script>
 </body>
 
