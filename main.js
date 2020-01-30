@@ -45,7 +45,7 @@ const gatos = [
     },
     
   ]
-  let contenedor = document.querySelector("section") //si lo pongo mas abajo se desaparecen las tarjetas
+  let contenedor = document.querySelector("section") 
 
    for (let i = 0; i < gatos.length; i++) {
     const gato = gatos[i];
@@ -105,22 +105,35 @@ const gatos = [
     const checkBox = document.querySelectorAll("input[type= 'checkbox']")
     const radio = document.querySelectorAll("input[type= 'radio']")
     const text = document.querySelectorAll("input[type= 'text']")
-    let nombre = document.querySelectorAll("input[type='text']");
-    let numero = document.querySelectorAll("input[type='number']");
+    const tel = document.querySelectorAll("input[type= 'number']")
+ 
 
-    //const nombreUsuario = inputsText[0]
-    //const telefonoUsuario = inputsText[1]
+    const nombreUsuario = text[0]
+    const telefonoUsuario = tel[0]
 
-      //const formGatos = documents.forms[3]
+    //const formGatos = documents.forms[3]
     //console.log(formularios)
 
 
+    formularios.onsubmit = e => {
+     e.preventDefault();
+     let opcionesElegidas = [];
+      for (let i = 0; i < radio.length; i++) {
+        
+       if (radio[i].checked) {
+         opcionesElegidas.push(radio[i].value)
+      };
+      console.log(opcionesElegidas)
+     }
 
-   // formAnimales.onsubmit = e => {
-    //  e.preventDefault();
-    ///formulario.onsubmit = e => {
-     //e.preventDefault();
+     
 
+     for(let i = 0; i < gatos.length; i++){
+      if(opcionesElegidas){
+        
+      }
+     }
+     
  
      //console.log(nombre)
      /*for (let i = 0; i < checkboxes.length; i++) {
@@ -133,4 +146,4 @@ const gatos = [
      console.log(opcionesElegidas)
     }*/
 
-   // }
+    }
