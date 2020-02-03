@@ -46,6 +46,8 @@ const gatos = [
     
   ]
   let contenedor = document.querySelector("section") 
+  let card = document.getElementById("card")
+
 
    for (let i = 0; i < gatos.length; i++) {
     const gato = gatos[i];
@@ -54,14 +56,13 @@ const gatos = [
     let descripcion = gato.shortDesc
     let descripcionLarga = gato.longDesc
     let img = gato.img 
-    contenedor.innerHTML = contenedor.innerHTML + `
-    <div class="card">
+    card.innerHTML = card.innerHTML + `
+    
     <div class="img"><img src="${img}"></div>
     <div class="descripcion">
     <h2>${nombre}</h2>
     <p>${descripcion}</p>
     <button class="mostrarModal">Ver más</button>
-    </div>
     </div>`
 
   }
@@ -114,25 +115,84 @@ const gatos = [
     //const formGatos = documents.forms[3]
     //console.log(formularios)
 
-
     formularios.onsubmit = e => {
-     e.preventDefault();
+      e.preventDefault();
+      console.log(`tu nombre es ${nombreUsuario.value} y tu tel ${telefonoUsuario.value}`)
      let opcionesElegidas = [];
-      for (let i = 0; i < radio.length; i++) {
-        
-       if (radio[i].checked) {
-         opcionesElegidas.push(radio[i].value)
+      for (let i = 0; i < checkBox.length; i++) {
+        if (checkBox[i].checked) {
+          opcionesElegidas.push(checkBox[i].value)
       };
-      console.log(opcionesElegidas)
      }
 
      
 
-     for(let i = 0; i < gatos.length; i++){
-      if(opcionesElegidas){
-        
+     if (!opcionesElegidas.length) {
+      console.log("No soleccionó ninguna opción")
+    } else {
+      if (opcionesElegidas.length === 1) {
+        console.log(`Elegiste la opción ${opcionesElegidas[0]}`)
+      } else {
+        console.log(`Elegiste las opciones ${opcionesElegidas.join(" , ")}`)
       }
-     }
+    }
+    let acumuladoraColor = ""
+  
+    for (let i = 0; i < gatos.length; i++) {
+  
+      for (let j = 0; j < gatos[i].colores.length; j++) {
+  
+        if (gatos[i].colores.includes(opcionesElegidas[j])) {
+  
+          acumuladoraColor += `
+       <div>
+       <img src=${gatos[i].img} alt=${gatos[i].name}>
+       <h3>${gatos[i].name}</h3>
+       <p>${gatos[i].shortDesc}</p>
+       <button class="boton-vermas">Ver mas</button>
+       </div>`
+          break;
+        }
+  
+      }
+      card.innerHTML = acumuladoraColor;
+    }
+  
+    let opcionesElegidasRadio = ""
+  
+    for (let i = 0; i < radio.length; i++) {
+      if (radio[i].checked) {
+        opcionesElegidasRadio += radio[i].value
+        console.log(`El sexo elegido es ${opcionesElegidasRadio}`)
+  
+      }
+  
+    }
+    if (!opcionesElegidasRadio.length) {
+      console.log("No soleccionó ninguna sexo")
+  
+    }
+  
+    let acumuladoraGatos = ""
+  
+    for (let i = 0; i < gatos.length; i++) {
+      if (gatos[i].sexo === opcionesElegidasRadio) {
+        acumuladoraGatos += `
+        <div>
+        <img src=${gatos[i].img} alt=${gatos[i].name}>
+        <h3>${gatos[i].name}</h3>
+        <p>${gatos[i].shortDesc}</p>
+        <button class="boton-vermas">Ver mas</button>
+        </div>`;
+  
+      }
+      card.innerHTML += acumuladoraGatos;
+  
+    }
+  
+  }  
+  
+  
      
  
      //console.log(nombre)
@@ -146,4 +206,4 @@ const gatos = [
      console.log(opcionesElegidas)
     }*/
 
-    }
+    
